@@ -27,6 +27,6 @@
             <squash>true</squash>
         </configuration>
     </plugin>
-  <plugins>
+  </plugins>
 </build>
 </project>
