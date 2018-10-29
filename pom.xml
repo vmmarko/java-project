@@ -18,15 +18,43 @@
   
   <build>
   <plugins>
-      <plugin>
-        <groupId>external.atlassian.jgitflow</groupId>
-        <artifactId>jgitflow-maven-plugin</artifactId>
-        <version>1.0-m5.1</version>
-        <configuration>
-            <noDeploy>true</noDeploy>
-            <squash>true</squash>
-        </configuration>
-    </plugin>
+   <plugin>
+	<groupId>external.atlassian.jgitflow</groupId>
+	<artifactId>jgitflow-maven-plugin</artifactId>
+	<version>1.0-m5.1</version>
+	<configuration>
+		<noDeploy>true</noDeploy>
+		<flowInitContext>
+		<masterBranchName>master</masterBranchName>
+		<developBranchName>develop</developBranchName>
+		<featureBranchPrefix>feature/</featureBranchPrefix>
+		<releaseBranchPrefix>release/</releaseBranchPrefix>
+		<hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
+		</flowInitContext>
+		<!--
+										 Keep your maven submodules at the same version as the aggregator
+																		POM
+										
+		-->
+		<autoVersionSubmodules>true</autoVersionSubmodules>
+		<!--   Share feature branches   -->
+		<pushFeatures>true</pushFeatures>
+		<!--
+										 Create a release branch when a release goal is initiated
+										
+		-->
+		<pushReleases>true</pushReleases>
+		<!--   Share maintenance branches   -->
+		<pushHotfixes>true</pushHotfixes>
+		<!--
+										 Prevents deployments from dev workstations so that they can
+																		be done by a CI server
+										
+		-->
+		<noDeploy>true</noDeploy>
+		<enableFeatureVersions>true</enableFeatureVersions>
+	</configuration>
+</plugin>
   </plugins>
 </build>
 </project>
