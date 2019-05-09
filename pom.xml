@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.infosys</groupId>
   <artifactId>java-project</artifactId>
@@ -15,7 +14,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-	
+
 	
   <build>
   <plugins>
@@ -32,55 +31,19 @@
 		<releaseBranchPrefix>release/</releaseBranchPrefix>
 		<hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
 		</flowInitContext>
-		<!--
 
-										 Keep your maven submodules at the same version as the aggregator
-																		POM
-										
-		-->
 		<autoVersionSubmodules>true</autoVersionSubmodules>
 		<!--   Share feature branches   -->
 		<pushFeatures>true</pushFeatures>
-		<!--
 
-										 Create a release branch when a release goal is initiated
-										
-		-->
 		<pushReleases>true</pushReleases>
 		<!--   Share maintenance branches   -->
 		<pushHotfixes>true</pushHotfixes>
-		<!--
 
-										 Prevents deployments from dev workstations so that they can
-																		be done by a CI server
-										
-		-->
 		<noDeploy>true</noDeploy>
 		<enableFeatureVersions>true</enableFeatureVersions>
 	</configuration>
 </plugin>
-	  
-	    <plugin>
-      <groupId>com.spotify</groupId>
-      <artifactId>docker-maven-plugin</artifactId>
-      <version>1.4.3</version>
-      <configuration>
-        <imageName>example</imageName>
-		<dockerDirectory>docker</dockerDirectory>
-		<forceTags>true</forceTags>
-		<imageTags>
-           <imageTag>${project.version}</imageTag>
-           <imageTag>latest</imageTag>
-        </imageTags>
-        <resources>
-           <resource>
-             <targetPath>/</targetPath>
-             <directory>${project.build.directory}</directory>
-             <include>${project.build.finalName}.jar</include>
-           </resource>
-        </resources>
-      </configuration>
-    </plugin>
 
   </plugins>
 </build>
