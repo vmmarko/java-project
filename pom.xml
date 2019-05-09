@@ -14,10 +14,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  
-	
-	
-	
+
 	
   <build>
   <plugins>
@@ -34,30 +31,20 @@
 		<releaseBranchPrefix>release/</releaseBranchPrefix>
 		<hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
 		</flowInitContext>
-		<!--
-										 Keep your maven submodules at the same version as the aggregator
-																		POM
-										
-		-->
+
 		<autoVersionSubmodules>true</autoVersionSubmodules>
 		<!--   Share feature branches   -->
 		<pushFeatures>true</pushFeatures>
-		<!--
-										 Create a release branch when a release goal is initiated
-										
-		-->
+
 		<pushReleases>true</pushReleases>
 		<!--   Share maintenance branches   -->
 		<pushHotfixes>true</pushHotfixes>
-		<!--
-										 Prevents deployments from dev workstations so that they can
-																		be done by a CI server
-										
-		-->
+
 		<noDeploy>true</noDeploy>
 		<enableFeatureVersions>true</enableFeatureVersions>
 	</configuration>
 </plugin>
+
   </plugins>
 </build>
 </project>
