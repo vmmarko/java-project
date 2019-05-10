@@ -13,9 +13,7 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-  </dependencies>
-
-	
+  </dependencies>	
   <build>
   <plugins>
    <plugin>
@@ -33,7 +31,7 @@
 		</flowInitContext>
 
 		<autoVersionSubmodules>true</autoVersionSubmodules>
-		<!--   Share feature branches   -->
+		
 		<pushFeatures>true</pushFeatures>
 
 		<pushReleases>true</pushReleases>
