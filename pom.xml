@@ -31,7 +31,7 @@
 		</flowInitContext>
 
 		<autoVersionSubmodules>true</autoVersionSubmodules>
-		<!--   Share feature branches   -->
+		
 		<pushFeatures>true</pushFeatures>
 
 		<pushReleases>true</pushReleases>
