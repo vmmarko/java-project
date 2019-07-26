@@ -5,8 +5,7 @@
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>java-project</name>
-  <url>http://maven.apache.org</url>
-	
+  <url>http://maven.apache.org</url>	
   <distributionManagement>
      <repository>
         <id>internalMavenReleaseRepository</id>
@@ -19,8 +18,7 @@
         <url>${snapshots.distribution.url}</url>
         <uniqueVersion>false</uniqueVersion>
      </snapshotRepository>
-  </distributionManagement>
-  
+  </distributionManagement>  
   <properties>
      <releases.distribution.url>
         ${repository.server.root}/test-releases/
